@@ -11,37 +11,30 @@ build:
     - docker build -t=shippabledocker/sample_node_pvt:masterpyt .
     
   ci:
-    - pip install -r requirements.txt
-    - mkdir -p shippable/testresults
-    - mkdir -p shippable/codecoverage
-    - which python
-    - coverage run `which nosetests` test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-    - coverage xml -o shippable/codecoverage/coverage.xml
-    - lsb_release -a
     - docker --version
     - docker info
     - docker ps 
     - echo $RESET_CACHE
     - echo $TEST_CACHE
-   # - |
-    #  if [ ! -z $RESET_CACHE ]; then
-    #    if [ -f /tmp/cache/cache.sh ]; then
-   #       echo "Cache did not get reset"
-   #       exit 1
-   #     fi
-   #   fi
-   # - |
-   #   if [ ! -z "$TEST_CACHE" ]; then
-   #     . /tmp/cache/cache.sh
-   #     if [ "$FOO" != "BAR" ]; then
-  #        echo "Cache is not working"
-  #        exit 1
-  #      fi
-  #    fi
-  #  - echo "export FOO=BAR" > cache.sh
-  #  - rm -rf /tmp/cache
-  #  - mkdir -p /tmp/cache
-  #  - cp cache.sh /tmp/cache
+    - |
+      if [ ! -z $RESET_CACHE ]; then
+        if [ -f /tmp/cache/cache.sh ]; then
+          echo "Cache did not get reset"
+          exit 1
+        fi
+      fi
+    - |
+      if [ ! -z "$TEST_CACHE" ]; then
+        . /tmp/cache/cache.sh
+        if [ "$FOO" != "BAR" ]; then
+          echo "Cache is not working"
+          exit 1
+        fi
+      fi
+    - echo "export FOO=BAR" > cache.sh
+    - rm -rf /tmp/cache
+    - mkdir -p /tmp/cache
+    - cp cache.sh /tmp/cache
   #  - sleep 3m
 
   post_ci:

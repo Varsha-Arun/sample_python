@@ -9,7 +9,7 @@ python:
  # - 3.2
  # - 3.3
  # - 3.4
-  - pypy
+ # - pypy
   - pypy3
 
 build:
@@ -24,7 +24,6 @@ build:
     - docker --version
     - docker info
     - docker ps 
-    #- sleep 3m
 
 integrations:    
   notifications:
@@ -32,8 +31,6 @@ integrations:
     - integrationName: email         
       type: email        
       recipients:
-        - shiptest.rc.ow@gmail.com
-        - shiptest.rc.me@gmail.com
         - varsha@shippable.com
       sendConsoleLogs: true
       sendCoverageReports: true

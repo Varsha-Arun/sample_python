@@ -38,7 +38,7 @@ build:
   #  - sleep 3m
 
   post_ci:
-    - docker push shippabledocker/sample_node_pvt:masterpyt
+    - docker push shippabledocker/sample_node_pvt:masterpyt 
     
   cache: true
   cache_dir_list:  

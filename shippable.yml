@@ -32,6 +32,7 @@ integrations:
       type: email        
       recipients:
         - varsha@shippable.com
+        - shiptest.rc.ow@gmail.com
       sendConsoleLogs: true
       sendCoverageReports: true
       on_start: always

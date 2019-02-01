@@ -20,7 +20,7 @@ templates-3: &script-multiline\
   - echo "script-multiline\ line 2"
   - echo "hello" \
     "world" \
-    "How you doing"
+    "How you doinggg"
   - foo3="boo3script1-multilineSlash"
   - echo "foo3=$foo3"
 

@@ -1,6 +1,6 @@
 templates-1: &template_1
   - echo "common-script_template_1 line 1"
-  - echo "common-script_template_1 line 1"
+  - echo "common-script_template_1 line 2"
   - foo=bootemplate_1again
   - echo "foo=$foo"
   #- secure: jiIsOHNYf13w5x761Q94QjNIBUHGC6sV9iKcudohJT44t3mGFX302Bp78CIaOIcNRLEY5eoOAusclFZJHoxqpfVsO0rtBZ6XgFA8mIu3p3ty8MgqWrKt+gM7wsHg49+G7WH//FaZka1G50X+gJuPLXC4K/MaFhN7/rZi3vlPP7wFpjvN6B80oHY3V1WRTQ8pr4QAmZ41l+kwLeY+2BrYp45djTLN1g1jOiZpnYbIMkLKxARDydOhoVHCfP5K+3N3xjJ+PXD6ytyYKiiijZGDrgZVeU37U91sputNhRUrBmLgg4tqWaX4LaqzG6EfAmRcVDupoGYSC9Y9fdglge6N0g==
@@ -9,7 +9,7 @@ templates-1: &template_1
 
 templates-2: &scripts
   - echo "script_scripts line 1"
-  - echo "script_scripts line 1"
+  - echo "script_scripts line 2"
   - foo1=boo1scripts
   - echo "foo1=$foo1"
   - ls

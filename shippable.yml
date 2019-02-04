@@ -17,3 +17,7 @@ build:
     - coverage run `which nosetests` test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
     - coverage xml -o shippable/codecoverage/coverage.xml
     - echo "End of CI sec"
+    
+  cache: true
+  cache_dir_list:
+    - $SHIPPABLE_BUILD_DIR/shippable.yml

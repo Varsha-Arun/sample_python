@@ -1,12 +1,12 @@
 language: python
 
 python:
-  - 3.6
+  - 3.7
   #- pypy
 
 build:
   pre_ci:
-    - echo "this is master branch"
+    - echo "this is master branch!"
     #- jfrog rt u testoct.sh test-jfrog-ship
     #- jfrog rt dl test-jfrog-ship/testoct.sh
     

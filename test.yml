@@ -1,0 +1,69 @@
+resources:
+  - name: sample_python_gitrepo
+    type: gitRepo
+    repoPath: Varsha-Arun/sample_python
+    configuration:
+      integrationName: github
+      branches:
+        except: "*test"
+        only: "15testreports"
+      tags:
+        except: none
+        only: none   
+      buildOnCommit: true
+      buildOnPullRequest: true
+      buildOnPullRequestClose: true
+      buildOnRelease: true
+      buildOnTagPush: true
+      buildOnFileCommit: "*test"
+      shallowDepth: 2
+      gitConfig: 
+        - dont_know
+        - dont_know_2
+    initialVersion:
+      sha: master
+      
+  - name: sample_python_image
+    type: image
+    imageName: "shippabledocker/sample_python"
+    configuration:
+      integrationName: docker
+    initialVersion:
+      imageTag: latest
+       
+      
+pipelines:
+  - name: pipeline-test
+    setup:
+      runtime: onHost-pipe
+      
+    steps:
+
+      - name: coveragereports
+        type: bash
+        configuration:
+          affinityGroup: test_group 
+          priority: 9999
+          timeoutSeconds: 40
+          cache: true
+        setup:
+          runtime: onHost
+        requires:
+          integrations:
+            - github
+        execution:
+          onStart:
+            - echo "Prepping build environment"
+          onExecute:
+            - echo "executing task command 1"
+            - echo "executing task command 2"
+          onSuccess:
+            - echo "Job well done!"
+          onFailure:
+            - echo "uh oh, something went wrong"
+          onComplete: #always
+            - echo "Cleaning up some stuff"
+          onCancel:
+            - echo "Someone cancelled the job"
+        outputResources:
+          - sample_python_image

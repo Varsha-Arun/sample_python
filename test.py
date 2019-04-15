@@ -76,7 +76,7 @@ class TestSuite(unittest.TestCase):
     def test15(self):
         app = App()
         app.calculate15()
-        self.failIf(app.retrieve15() != 168)
+        self.failIf(app.retrieve15() != 16) #168 ll pass
         
 def main():
     unittest.main()

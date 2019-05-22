@@ -10,6 +10,7 @@ python:
 env:
   global:
     - ENVG: "goo"
+    - secure: AON2A1TxIsSkHRFU5YC5TBijJjSYbVojrkrkl5ixxmo59dKW3jq69Se/dYCBrhHFcBs/D0FloEYtCm/ShsTSa6/5UBQBChl1KbXmz6ItpMaC/xekom0+yULq0UCDQE8TFru/WAzB/V5kwhEf/yc9OQ1LAzfXP9a7+Hv/uhR4/cBpsOsvPtO1r1cdbR3Ow3KlAd7Hr3JFHk2gTCLRuBmmd82jtA8ayMHFASbin1nlw4NC7MnrqzOvzgT2yUN7XhPr4S5mXkkz/rmUG6rv7O3/JLJ9dNFvQ/t0HE6vvWgUbktEEHChh74UFJohHA/02AKKT2L+5fPrr/KqIdKwZKZLyQ==
   matrix:
     - ENV1: "foo"
       ENV2: "bar"
